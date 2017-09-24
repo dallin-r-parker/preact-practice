@@ -10,9 +10,7 @@ export default class Dallin extends Component {
 		console.log('didMount: ', this.state)
 	}
 	
-	handleChange(e){
-		console.log('e: ', e.target.value)
-	}
+	handleChange = e => this.setState({name: e.target.value})
 
 
 	render(props, {name}, context) {
@@ -22,7 +20,7 @@ export default class Dallin extends Component {
 		return (
 			<div className="dallin-container">
 				<h1>My name is {name}</h1>
-				<input onchange={this.handleChange}/>
+				<input onChange={this.handleChange} value={name}/>
 			</div>
 		)
 	}
